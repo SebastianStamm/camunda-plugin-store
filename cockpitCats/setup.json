@@ -1,0 +1,9 @@
+{
+  "title": "Cats!",
+  "description": "Everything is better with Cats! This plugin adds a random cat image to your Cockpit dashboard. A new cat on every dashboard visit!",
+  "app": "Cockpit",
+  "type": "Custom Script",
+  "config": {
+    "ngDeps": ["cockpit.cats"]
+  }
+}

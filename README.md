@@ -20,9 +20,7 @@ This file contains information about how to install and uninstall your plugin. P
   "description": "A short description of the Plugin. It should not contain more than 250 characters",
   "app": "Cockpit",
   "type": "Custom Script",
-  "config": {
-    ... // see below
-  }
+  "config": {}
 }
 ```
 

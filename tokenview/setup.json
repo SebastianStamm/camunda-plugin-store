@@ -1,0 +1,9 @@
+{
+  "title": "Tokenview",
+  "description": "Experience your process from the viewpoint of a token. Jump into a 3d representation of your process and watch how the tokens move through it.",
+  "app": "Cockpit",
+  "type": "Custom Script",
+  "config": {
+    "ngDeps": ["cockpit.tokenView"]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Godmode",
+  "description": "The right extension for The Almighty. Control everything! Break everything! Cry because you cannot fix it because you removed the navigation.",
+  "app": "Cockpit",
+  "type": "Custom Script",
+  "config": {
+    "ngDeps": ["cockpit.godmode"]
+  }
+}

@@ -155,11 +155,11 @@ define(["angular"], function(angular) {
                 curr.push(id);
               });
 
-            console.log(allPlugins);
-
             const list = document.querySelector("#godmodeList");
 
             addEntries(allPlugins, list);
+
+            document.querySelector("#godmodeList > li").click();
           }
         ]
       });
@@ -180,18 +180,23 @@ define(["angular"], function(angular) {
   function addEntries(plugins, node, context = "") {
     const submenus = Object.keys(plugins);
 
+    const toggled = JSON.parse(localStorage.getItem("godmodePlugins2") || "[]");
+
     submenus.forEach(submenu => {
       const subnode = document.createElement("li");
       if (typeof plugins[submenu] === "object") {
         const sublist = document.createElement("ul");
         sublist.style.display = "none";
-        const btn = createToggleButton(subnode);
+        const btn = createToggleButton(
+          subnode,
+          toggled.includes(context + submenu + ".")
+        );
         subnode.appendChild(btn);
         subnode.appendChild(document.createTextNode(submenu));
         node.appendChild(subnode);
         subnode.appendChild(sublist);
         addEntries(plugins[submenu], sublist, context + submenu + ".");
-
+        subnode.setAttribute("data-identifier2", context + submenu + ".");
         let nodeOpen = false;
         subnode.addEventListener("click", evt => {
           evt.stopPropagation();
@@ -210,10 +215,19 @@ define(["angular"], function(angular) {
           "data-identifier",
           context.slice(0, -1) + ":" + plugins[submenu]
         );
+        subnode.setAttribute(
+          "data-identifier2",
+          context.slice(0, -1) + ":" + plugins[submenu]
+        );
         node.appendChild(subnode);
-        const btn = createToggleButton(subnode);
+        const btn = createToggleButton(
+          subnode,
+          toggled.includes(context.slice(0, -1) + ":" + plugins[submenu])
+        );
         subnode.appendChild(btn);
-        let on = true;
+        let on = !toggled.includes(
+          context.slice(0, -1) + ":" + plugins[submenu]
+        );
         subnode.addEventListener("click", evt => {
           evt.stopPropagation();
           if (on) {
@@ -232,15 +246,15 @@ define(["angular"], function(angular) {
     });
   }
 
-  function createToggleButton(li) {
+  function createToggleButton(li, deactivated) {
     const btn = document.createElement("div");
     btn.classList.add("toggleBtn");
-    li.classList.add("on");
+    li.classList.add(deactivated ? "off" : "on");
     btn.innerHTML = `<span class="checkmark">
       <div class="checkmark_stem"></div>
       <div class="checkmark_kick"></div>
     </span>`;
-    let on = true;
+    let on = !deactivated;
     btn.addEventListener("click", evt => {
       evt.stopPropagation();
       if (on) {
@@ -270,9 +284,17 @@ define(["angular"], function(angular) {
       }
     }
 
-    console.log("disabled", disabled);
-
     localStorage.setItem("godmodePlugins", JSON.stringify(disabled));
+
+    const nodes2 = document.querySelectorAll(".off[data-identifier2]");
+
+    const disabled2 = [];
+    for (let i = 0; i < nodes2.length; i++) {
+      const node = nodes2[i];
+      disabled2.push(node.getAttribute("data-identifier2"));
+    }
+
+    localStorage.setItem("godmodePlugins2", JSON.stringify(disabled2));
   }
 
   return ngModule;

@@ -1,0 +1,9 @@
+{
+  "title": "Space Invaders!",
+  "description": "You're monitoring your workflows, but nothing is happening? Use this plugin to bridge the time and install space invaders to combine you most favorit game with your most favorite tool!",
+  "app": "Cockpit",
+  "type": "Custom Script",
+  "config": {
+    "ngDeps": ["cockpit.spaceInvaders"]
+  }
+}

@@ -4,6 +4,6 @@
   "app": "Cockpit",
   "type": "Custom Script",
   "config": {
-    "ngDeps": ["cockpit.spaceInvaders"]
+    "ngDeps": ["cockpit.cockpitSpaceInvaders"]
   }
 }

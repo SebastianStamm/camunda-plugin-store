@@ -1,5 +1,5 @@
 define(["angular"], function(angular) {
-  var ngModule = angular.module("cockpit.cockpitXkcd", []);
+  var ngModule = angular.module("cockpit.xkcd", []);
 
   ngModule.config([
     "ViewsProvider",

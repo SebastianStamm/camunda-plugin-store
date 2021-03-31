@@ -2,8 +2,5 @@
   "title": "XKCD Comics!",
   "description": "Your workflows are running wild and are nothing to laugh about? Light up your life a again by having a look at a XKCD comic and burst into laugh!",
   "app": "Cockpit",
-  "type": "Custom Script",
-  "config": {
-    "ngDeps": ["cockpit.xkcd"]
-  }
+  "type": "Custom Script"
 }

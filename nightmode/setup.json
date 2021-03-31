@@ -1,9 +1,0 @@
-{
-  "title": "Camunda Nightmode",
-  "description": "Adds a Dark Theme to Camunda Cockpit. Uses a lot of power so beware of potential power outages!",
-  "app": "Cockpit",
-  "type": "Custom Script",
-  "config": {
-    "ngDeps": ["cockpit.nightmode"]
-  }
-}

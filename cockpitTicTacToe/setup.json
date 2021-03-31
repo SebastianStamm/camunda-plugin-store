@@ -2,8 +2,5 @@
   "title": "Play tic tac toe!",
   "description": "Tired of looking at workflows? Then it's time to take a break and let you decide which symbol is coming next. ",
   "app": "Cockpit",
-  "type": "Custom Script",
-  "config": {
-    "ngDeps": ["cockpit.cockpitTicTacToe"]
-  }
+  "type": "Custom Script"
 }

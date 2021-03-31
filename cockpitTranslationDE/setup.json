@@ -2,6 +2,5 @@
   "title": "Camunda Pilotenkanzel",
   "description": "Wollen wir nicht alle lieber Zwischenfälle bearbeiten anstatt Incidents? Hol dir jetzt Camunda Cockpit auf Deutsch.",
   "app": "Cockpit",
-  "type": "Translation",
-  "config": null
+  "type": "Translation"
 }

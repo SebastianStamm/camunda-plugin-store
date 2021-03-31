@@ -19,8 +19,7 @@ This file contains information about how to install and uninstall your plugin. P
   "title": "My Awesome Plugin",
   "description": "A short description of the Plugin. It should not contain more than 250 characters",
   "app": "Cockpit",
-  "type": "Custom Script",
-  "config": {}
+  "type": "Custom Script"
 }
 ```
 
@@ -28,14 +27,10 @@ The `app` property indicates which webapp is augmented by the plugin. Right now,
 
 The `type` property indicates what type of plugin this is. Right now, we only support `"Custom Script"` and `"Translation"` for this property.
 
-The contents of the `config` property depend on the selected type:
-
 #### `"Custom Script"` Config
-
-- `ngDeps`: An array of angular module ids that will be added to the `customScripts.ngDeps` array in the webapp config file
 
 For custom scripts, the src directory of the plugin must contain an index.js file that serves as entry point for the plugin.
 
 #### `"Translation"` Config
 
-For translations, the config is `null`. The src directory of the plugin must contain a .json file with the appropriate language code (e.g. `en.json`).
+For translations, the src directory of the plugin must contain a .json file with the appropriate language code (e.g. `en.json`).
